@@ -1,4 +1,5 @@
 class UserFriendsController < ApplicationController
+  before_action :authenticate_user!
   def create
     user_friend = UserFriend.new
 
