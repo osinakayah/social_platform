@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # devise_for :users
   get 'static_pages/index'
-  root 'static_pages#index'
+  root 'posts#index'
   get 'posts', to: 'posts#index'
   resources :posts, only: [:create]
   resources :comments, only: [:create]
