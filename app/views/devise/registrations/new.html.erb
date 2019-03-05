@@ -1,0 +1,73 @@
+
+<div class="container">
+  <div class="row">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
+  <div class="row">
+
+    <div class="offset-lg-6 offset-md-6 col-lg-6 col-md-6 col-sm-12 col-12">
+      <div id="registration_container">
+        <br>
+        <h3>Create an Account with us</h3>
+        <p>It is always easy and free</p>
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="row">
+            <div class="col-12 col-sm-6 form-group">
+              <%= f.text_field :first_name, class: 'form-control', placeholder: 'First Name', :required=>true %>
+            </div>
+            <div class="col-12 col-sm-6 form-group">
+              <%= f.text_field :last_name, class: 'form-control', placeholder: 'Last Name', :required=>true %>
+            </div>
+
+            <div class="col-12 form-group">
+              <%= f.text_field :phone_number, class: 'form-control', placeholder: 'Phone Number', :required=>true %>
+            </div>
+
+            <div class="col-12 form-group">
+              <%= f.email_field :email, autocomplete: "email", class: 'form-control', placeholder: 'Email', :required=>true %>
+            </div>
+
+            <div class="col-12 form-group">
+              <%= f.password_field :password, placeholder: 'Password', class: 'form-control', :required=>true %>
+            </div>
+
+            <div class="col-12 form-group">
+              <%= f.password_field :password_confirmation, placeholder: 'Confirm password', class: 'form-control', :required=>true %>
+            </div>
+
+            <div class="col-12 form-group">
+              <%= f.date_field :birth_day, placeholder: 'Birthday', class: 'form-control', :required=>true %>
+              <small id="birthday-help" class="form-text text-muted">Please provide your birthday</small>
+            </div>
+
+            <div class="col-12">
+              <div class="form-check form-check-inline">
+
+                <%= f.radio_button :gender, '1', placeholder: 'Male', class: 'form-check-input', id: 'gender_male', :checked => true %>
+                <%= label :gender_male, 'Male', class: 'form-check-label' %>
+              </div>
+              <div class="form-check form-check-inline">
+                <%= f.radio_button :gender, '2', placeholder: 'Female', class: 'form-check-input', id: 'gender_female' %>
+                <%= label :gender_female, 'Female', class: 'form-check-label' %>
+              </div>
+            </div>
+
+            <div class="form-group col-12">
+              <br>
+              <%= f.submit "Sign up", class: 'btn btn-dark btn-block' %>
+            </div>
+
+          </div>
+        <% end %>
+
+        <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: 'btn btn-block btn-secondary' %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+

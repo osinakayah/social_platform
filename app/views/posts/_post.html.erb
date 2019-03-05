@@ -1,0 +1,44 @@
+<div class="card bg-light text-dark" id="post-<%= post.id %>">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-lg-2">
+        <img src="https://via.placeholder.com/200x200" class="img-fluid img-circle rounded-circle">
+      </div>
+      <div class="col-lg-10 card-author">
+        <p class="">
+          <%= get_author post.user %>
+        </p>
+        <small>
+          <%= time_ago_in_words post.created_at %>
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <%= image_tag post.image_url, class: "card-img" %>
+  <div class="card-img-overlay only-text-content"  >
+    <h5 class="card-title"><%= post.content %></h5>
+  </div>
+  <div class="card-footer text-muted">
+
+
+    <div>
+      <br>
+      <%= render post_comments post %>
+    </div>
+
+
+
+
+    <div class="row">
+      <%= form_for(@comment , html: { class: "col-lg-12"}) do |f| %>
+        <%= f.hidden_field :post_id, value: post.id %>
+        <br>
+        <div class="form-group">
+          <%= f.text_field :comment, class: "form-control", placeholder: "Comment" %>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>
