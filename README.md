@@ -1,24 +1,14 @@
-# README
+# Social Platform
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a demo rails project to replicate how a social platform works.
 
-Things you may want to cover:
+Users can send register, login, send a friend request, make post, comment on post.
 
-* Ruby version
+Some of the TODO include 
+Adding a notifications feature, unfriend a user.
 
-* System dependencies
+It was built using 
 
-* Configuration
+Rails  5.2.2
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ The live version can be found <a href="https://mysterious-woodland-16033.herokuapp.com/">here</a>
